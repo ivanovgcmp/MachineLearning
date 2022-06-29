@@ -17,3 +17,9 @@ df = df.drop(['Unnamed: 0'], axis = 1)
 categorial_features = ['cut', 'color', 'clarity']
 le = LabelEncoder
 
+# Replacing categories with numerical values
+for i in range(3):
+    new = le.fit_transform(df[categorial_features[i]])
+    df[categorial_features[i]] = new
+
+# ~ print(df.head(10).to_string())
