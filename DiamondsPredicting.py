@@ -31,3 +31,5 @@ y = df[['price']]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 25, random_state = 101)
 
 # Training
+regr = RandomForestRegressor(n_estimators = 10, max_depth = 10, random_state = 104)
+regr.fit(X_train, y_train.values.ravel())
