@@ -14,4 +14,6 @@ print(df.head(10).to_string())
 df = df.drop(['Unnamed: 0'], axis = 1)
 
 # Creating variables for categories
+categorial_features = ['cut', 'color', 'clarity']
+le = LabelEncoder
 
