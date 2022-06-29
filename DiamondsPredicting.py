@@ -33,3 +33,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 25, random
 # Training
 regr = RandomForestRegressor(n_estimators = 10, max_depth = 10, random_state = 104)
 regr.fit(X_train, y_train.values.ravel())
+
+# Prediction
+predictions = regr.predict(X_test)
+
+result = X_test
+result['price'] = y_test
+result['prediction'] = predictions.tolist()
+
+print(result.to_string())
+
+
